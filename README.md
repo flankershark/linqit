@@ -14,8 +14,34 @@ console.log(
         .where(user => user.last_name === 'Perri')
         .orderby((a, b) => (a.id - b.id))
         .select(
-            { id: user.id, first_name: user.first_name, avatar: user_avatar }
+            { id: user.id, first_name: user.first_name, avatar: user.avatar }
         )
+);
+```
+
+Of course, each single part can work as a standalone function as well, so it also can be like this:
+
+```javascript
+console.log(
+    linqit()
+        .from(users)
+        .where(user => user.last_name === 'Perri')
+        .orderby((a, b) => (a.id - b.id))
+);
+```
+or
+```javascript
+console.log(
+    linqit()
+        .from(users)
+        .where(user => user.last_name === 'Perri')
+);
+```
+or
+```javascript
+console.log(
+    linqit()
+        .from(users)
 );
 ```
 
