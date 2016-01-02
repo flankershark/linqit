@@ -79,7 +79,7 @@ console.log(
         .where(user => user.last_name === 'Perri')
 );
 ```
-or
+even
 ```javascript
 console.log(
     linqit()
@@ -128,7 +128,7 @@ linqit()
 ```
 
 
-For sure that everything can be on the same line as expected
+For sure that everything can be on put the same line as expected
 ```javascript
 console.log(linqit().from(users).where(user => user.id < 5).orderby((a, b) => (a.id - b.id)).select(user => ({ id: user.id, first_name: user.first_name })));
 ```
