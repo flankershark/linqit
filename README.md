@@ -90,10 +90,11 @@ console.log(
 
 ## TODO
 A few more features might be put on the list
+
 1. to join something on
-1. to group by and having
-1. to constrain the number of records, limit(f, t), limit(n), all()
-1. a few of sql-related functions, such as .count() [done], .max(), .min(), .sum(), .agv()
+2. to group by and having
+3. to constrain the number of records, limit(f, t), limit(n), all()
+4. a few of sql-related functions, such as .count() [done], .max(), .min(), .sum(), .agv()
 
 operators join, on, and as might be like this
 ```javascript
