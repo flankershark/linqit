@@ -88,20 +88,49 @@ console.log(
 ```
 
 
+With operator .select(), columns in result set can be reordered even renamed
+
+```javascript
+console.log(
+    linqit()
+        .from(users)
+        .where(user => util.count(user.last_name) > 6)
+        .orderby((a, b) => (a.id - b.id))
+        .select(
+            user => (
+                {   // reorder, rename your data ('work_email', a new alias given here, like SQL keyword AS)
+                    work_email: user.email,
+                    last_name: user.last_name,
+                    first_name: user.first_name,
+                    avatar: user.avatar,
+                    id: user.id
+                }
+            )
+        )
+);
+```
+
+
 ## TODO
 A few more features might be put on the list
 
-1. to join something on
-2. to group by and having
-3. to constrain the number of records, limit(f, t), limit(n), all()
-4. a few of sql-related functions, such as .count() [done], .max(), .min(), .sum(), .agv()
+1. to join something on something else
+2. to group by and handle having part
+3. to constrain the number of records, by using a series of functions: limit(f, t), limit(n), all()
+4. a few of SQL-related functions, such as .count() [done], .max(), .min(), .sum(), .agv()
 
-operators join, on, and as might be like this
+Operators .join(), .on(), and .as() might be like this
 ```javascript
 linqit()
     .from(users)
     .join(following).as(b).on((a, b) => (a.id === b.id))
     .join(activities).as(c).on((a, c) => (a.id === c.id))
+```
+
+
+For sure that everything can be on the same line as expected
+```javascript
+console.log(linqit().from(users).where(user => user.id < 5).orderby((a, b) => (a.id - b.id)).select(user => ({ id: user.id, first_name: user.first_name })));
 ```
 
 
