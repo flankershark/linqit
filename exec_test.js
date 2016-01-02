@@ -5,10 +5,15 @@
 // 
 
 
-var exec = require('./exec');
+var exec_unit = require('./exec');
 
 
-console.log(exec().if(() => true).run(() => console.log('hello')).return(() => 'world'));
+console.log(
+    exec_unit()
+        .if(() => true)
+            .run(() => console.log('hello'))
+        .return(() => 'world')
+);
 
 
 //:)~

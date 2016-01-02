@@ -12,7 +12,7 @@
 // 
 
 
-var exec = require('./exec');
+var exec_unit = require('./exec');
 
 
 var linqit = function () {
@@ -20,16 +20,16 @@ var linqit = function () {
         data: null,
         
         from: function (data) {
-            return exec().run(() => this.data = data).return(() => this);
+            return exec_unit().run(() => this.data = data).return(() => this);
         },
         where: function(fn) {
-            return exec().run(() => this.data = this.data.filter(fn)).return(() => this);
+            return exec_unit().run(() => this.data = this.data.filter(fn)).return(() => this);
         },
         orderby: function(fn) {
-            return exec().run(() => this.data = this.data.sort(fn)).return(() => this);
+            return exec_unit().run(() => this.data = this.data.sort(fn)).return(() => this);
         },
         select: function(fn) {
-            return exec().run(() => this.data = this.data.map(fn)).return(() => this);
+            return exec_unit().run(() => this.data = this.data.map(fn)).return(() => this);
         }
     };
 };
