@@ -14,7 +14,7 @@
 
 
 var util   = require('./util')();
-var expr   = require('./expr');
+// var expr   = require('./expr')();
 var linqit = require('./linqit');
 
 
@@ -30,7 +30,10 @@ var users = [
 ];
 
 
+
+// 
 // sample #0: numbers
+// 
 console.log(
     linqit()
         .from(numbers)
@@ -39,8 +42,9 @@ console.log(
 );
 
 
-
+// 
 // sample #1: WHERE field < x ORDER BY field ASC, but it's dealing with object array this time
+// 
 console.log(
     linqit()
         .from(users)
@@ -54,7 +58,9 @@ console.log(
 );
 
 
+// 
 // sample #2: WHERE field IS NULL
+// 
 console.log(
     linqit()
         .from(users)
@@ -62,7 +68,9 @@ console.log(
 );
 
 
+// 
 // sample #3: WHERE field = 'string'
+// 
 console.log(
     linqit()
         .from(users)
@@ -71,7 +79,9 @@ console.log(
 );
 
 
+// 
 // sample #4: ORDER BY field;
+// 
 console.log(
     linqit()
         .from(users)
@@ -79,7 +89,9 @@ console.log(
 );
 
 
+// 
 // sample #5: SELECT [ particular fields / columns ], and also comes with .count() comparison in the where clause and ORDER BY field DESC
+// 
 console.log(
     linqit()
         .from(users)
@@ -87,7 +99,7 @@ console.log(
         .orderby((a, b) => (a.id - b.id))
         .select(
             user => (
-                {   // reorder, rename (different alias given here, like SQL keyword AS)
+                {   // reorder, rename your data ('work_email', a new alias given here, like SQL keyword AS)
                     work_email: user.email,
                     last_name: user.last_name,
                     first_name: user.first_name,
@@ -99,7 +111,9 @@ console.log(
 );
 
 
+// 
 // sample #6: an inline operation (put everything on the same line if you hope so)
+// 
 console.log(linqit().from(users).where(user => user.id < 5).orderby((a, b) => (a.id - b.id)).select(user => ({ id: user.id, first_name: user.first_name })));
 
 

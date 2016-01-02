@@ -5,7 +5,7 @@
 // 
 
 
-var expr      = require('./expr');
+var expr      = require('./expr')();
 var exec_unit = require('./exec');
 
 

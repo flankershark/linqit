@@ -12,7 +12,7 @@ module.exports = function () {
         null:  () => null,
         empty: () => {}
     };
-}();
+};
 
 
 //:)~

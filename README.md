@@ -88,12 +88,29 @@ console.log(
 ```
 
 
+## TODO
+A few more features might be put on the list
+1. to join something on
+1. to group by and having
+1. to constrain the number of records, limit(f, t), limit(n), all()
+1. a few of sql-related functions, such as .count() [done], .max(), .min(), .sum(), .agv()
+
+operators join, on, and as might be like this
+```javascript
+linqit()
+    .from(users)
+    .join(following).as(b).on((a, b) => (a.id === b.id))
+    .join(activities).as(c).on((a, c) => (a.id === c.id))
+```
+
+
 ## And
 Hope it's gonna be a real project soon :)
 
 ```javascript
 console.log('Happy New Years & Have fun :)');
-```
 
 
 //:)~
+```
+
