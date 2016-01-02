@@ -28,7 +28,7 @@ var users = [
 
 
 // sample #0: inline
-// console.log(linqit.from(users).where(user => user.id < 5).orderby((a, b) => (a.id - b.id)).select(user => ({ id: user.id, first_name: user.first_name })));
+console.log(linqit().from(users).where(user => user.id < 5).orderby((a, b) => (a.id - b.id)).select(user => ({ id: user.id, first_name: user.first_name })));
 
 
 // sample #1: WHERE field < x ORDER BY field ASC
