@@ -39,7 +39,7 @@ var users = [
 ```
 
 You might be familar with LINQ and SQL. Assuming that you know SQL at least.
-So the following **linqit code** are equivalent to the SQL statement followed by
+So the following ``**linqit code**`` are equivalent to the SQL statement followed by
 ```javascript
 console.log(
     linqit()
@@ -114,7 +114,7 @@ console.log(
 ## TODO
 A few more features might be put on the list
 
-1. to join something on something else
+1. to ``join`` something ``on`` something else
 2. to group by and handle having part
 3. to constrain the number of records, by using a series of functions: limit(f, t), limit(n), all()
 4. a few of SQL-related functions, such as .count() [done], .max(), .min(), .sum(), .agv()
