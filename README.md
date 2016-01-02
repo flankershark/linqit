@@ -1,8 +1,12 @@
 # linqit
-
 A couple of LINQ-like functions.
 It's just for fun coz I was playing around with JavaScript and Node.js
 
+## Runtime Environment
+node.js
+tested on v5.3.0
+
+## Samples
 ```javascript
 var users = [
     { id: 1, first_name: 'Emily', last_name: 'Perri', avatar: 'perrie.png' }
