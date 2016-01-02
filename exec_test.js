@@ -5,12 +5,13 @@
 // 
 
 
+var expr      = require('./expr');
 var exec_unit = require('./exec');
 
 
 console.log(
     exec_unit()
-        .if(() => true)
+        .if(expr.true)
             .run(() => console.log('hello'))
         .return(() => 'world')
 );

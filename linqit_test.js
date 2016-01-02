@@ -13,9 +13,12 @@
 // 
 
 
+var util   = require('./util')();
 var expr   = require('./expr');
 var linqit = require('./linqit');
 
+
+var numbers = [ 3, 7, 1, 5, 18, 77, 51, 82 ];
 
 var users = [
     { id: 5, email: 'eric@foobar.org',   first_name: 'Emily',  last_name: 'Church',  avatar: null           },
@@ -27,11 +30,17 @@ var users = [
 ];
 
 
-// sample #0: inline
-console.log(linqit().from(users).where(user => user.id < 5).orderby((a, b) => (a.id - b.id)).select(user => ({ id: user.id, first_name: user.first_name })));
+// sample #0: numbers
+console.log(
+    linqit()
+        .from(numbers)
+        .where((x) => x > 50)
+        .orderby((a, b) => (b - a))
+);
 
 
-// sample #1: WHERE field < x ORDER BY field ASC
+
+// sample #1: WHERE field < x ORDER BY field ASC, but it's dealing with object array this time
 console.log(
     linqit()
         .from(users)
@@ -50,14 +59,7 @@ console.log(
     linqit()
         .from(users)
         .where(user => user.avatar === null)
-        .orderby((a, b) => (a.id - b.id))
-        .select(
-            user => (
-                { id: user.id, first_name: user.first_name, avatar: user.avatar }
-            )
-        )
-)
-;
+);
 
 
 // sample #3: WHERE field = 'string'
@@ -66,16 +68,6 @@ console.log(
         .from(users)
         .where(user => user.last_name === 'Church')
         .orderby((a, b) => (a.id - b.id))
-        .select(
-            user => (
-                {
-                    id: user.id,
-                    first_name: user.first_name,
-                    last_name: user.last_name,
-                    avatar: user.avatar
-                }
-            )
-        )
 );
 
 
@@ -83,14 +75,32 @@ console.log(
 console.log(
     linqit()
         .from(users)
-        .where(expr.true)
+        .orderby((a, b) => (a.id - b.id))
+);
+
+
+// sample #5: SELECT [ particular fields / columns ], and also comes with .count() comparison in the where clause and ORDER BY field DESC
+console.log(
+    linqit()
+        .from(users)
+        .where(user => util.count(user.last_name) > 6)
         .orderby((a, b) => (a.id - b.id))
         .select(
             user => (
-                { id: user.id, first_name: user.first_name, last_name: user.last_name, avatar: user.avatar }
+                {   // reorder, rename (different alias given here, like SQL keyword AS)
+                    work_email: user.email,
+                    last_name: user.last_name,
+                    first_name: user.first_name,
+                    avatar: user.avatar,
+                    id: user.id
+                }
             )
         )
 );
+
+
+// sample #6: an inline operation (put everything on the same line if you hope so)
+console.log(linqit().from(users).where(user => user.id < 5).orderby((a, b) => (a.id - b.id)).select(user => ({ id: user.id, first_name: user.first_name })));
 
 
 //:)~
