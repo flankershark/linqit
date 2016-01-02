@@ -1,11 +1,11 @@
 # linqit
-A couple of LINQ-like functions.
+A couple of **LINQ-like functions**.
 Truth to be told, it's far away to be a real project and deal with more complicated requirements in the real world.
-It's just for fun coz I was playing around with JavaScript and Node.js
+It's just for fun coz I was playing around with JavaScript and Node.js =]
 
 
 ## Runtime Environment
-node.js
+node.js  
 tested on v5.3.0
 
 
@@ -14,17 +14,27 @@ Let's say we have a piece of data, it can be either
 * object array like JSON object or
 * primitve array like numbers
 
-One of popular cases is to manipulate data by using ways for different business rules, scenarios or whatever you name it.
+One of the most popular scenarios is to manipulate data by using ways to deal with different business rules, requirements or whatever you name it.
 However, these can be divided into may be three categories:
 * fitering
 * sorting and
-joining data
+* joining data
 
-May be I forgot something else, but hope I didn't. Anyway, let's get started.
-Let's make some sample data first
+Or I forgot something else, but hope I didn't. Anyway, let's get started.
+
+Let's make some sample data first (BTW, primitive array works as well)
 ```javascript
 var users = [
-    { id: 1, first_name: 'Emily', last_name: 'Perri', avatar: 'perrie.png' }
+    {
+        id: 1,
+        first_name: 'Emily',
+        last_name: 'Perri',
+        avatar: 'perrie.png'
+        // and some fields you like
+    }
+    
+    // ..., and, thousands of records here, aren't there?
+    // Your imagination is necessary for that :)
 ];
 ```
 
@@ -84,3 +94,6 @@ Hope it's gonna be a real project soon :)
 ```javascript
 console.log('Happy New Years & Have fun :)');
 ```
+
+
+//:)~
