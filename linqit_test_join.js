@@ -67,7 +67,7 @@ console.log(
 // linqit().from(users).join(following).on((a, b) => (a.id === b.id && a.id > 1));
 // 
 // setp #3 : [ TODO ]
-// linqit().from(users).join(following).as(b).on((a, b) => (a.id === b.id)).join(activities).as(c).on((a, c) => (a.id === c.id));
+// linqit().from(users).as(a).join(following).as(b).on((a, b) => (a.id === b.id)).join(activities).as(c).on((a, c) => (a.id === c.id));
 // 
 
 

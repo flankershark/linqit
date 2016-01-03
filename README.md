@@ -22,7 +22,7 @@ However, these can be divided into may be three categories:
 
 Or I forgot something else, but hope I didn't. Anyway, let's get started.
 
-Let's make some sample data first (BTW, primitive array works as well)
+Let's make some sample data first (Again, primitive array works as well)
 ```javascript
 var users = [
     {
@@ -122,7 +122,7 @@ A few more features might be put on the list
 Operators ``.join()``, ``.on()``, and ``.as()`` might be like this
 ```javascript
 linqit()
-    .from(users)
+    .from(users).as(a)
     .join(following).as(b).on((a, b) => (a.id === b.id))
     .join(activities).as(c).on((a, c) => (a.id === c.id))
 ```
@@ -139,6 +139,12 @@ Hope it's gonna be a real project soon :)
 
 ```javascript
 console.log('Happy New Years & Have fun :)');
+
+
+References
+1. Microsoft LINQ
+   [https://msdn.microsoft.com/en-us/library/bb397926.aspx] (https://msdn.microsoft.com/en-us/library/bb397926.aspx)
+2. 
 
 
 //:)~
