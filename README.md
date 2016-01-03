@@ -140,13 +140,13 @@ Hope it's gonna be a real project soon :)
 ```javascript
 console.log('Happy New Years & Have fun :)');
 
-
-References
-1. Microsoft LINQ
-   [https://msdn.microsoft.com/en-us/library/bb397926.aspx] (https://msdn.microsoft.com/en-us/library/bb397926.aspx)
-2. 
-
-
 //:)~
 ```
+
+
+## References
+
+1. Microsoft LINQ
+   [https://msdn.microsoft.com/en-us/library/bb397926.aspx](https://msdn.microsoft.com/en-us/library/bb397926.aspx)
+2. [TODO]
 
